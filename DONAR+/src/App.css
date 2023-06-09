@@ -8,6 +8,11 @@
 .icon{
   width:40px;
   height:40px;
-  color: #5107baff;
-   ;
+  color: #f29100ff
+  
+  /*#5107baff;*/
+}
+nav{
+  font-size: 18px;
+  
 }

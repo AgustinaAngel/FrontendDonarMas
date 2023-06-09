@@ -15,8 +15,8 @@ function NavBar() {
     </button>
     <div className="collapse navbar-collapse" id="navbarText">
       <ul className="navbar-nav mr-auto">
-        <li className="nav-item active">
-          <a className="nav-link" href="#">Mapa <span className="sr-only">(current)</span></a>
+        <li className="nav-item ">
+        <a className="nav-link" href="#">Mapa</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Campañas</a>
