@@ -8,11 +8,24 @@
 .icon{
   width:40px;
   height:40px;
-  color: #f29100ff
+  color: #5107baff; 
   
   /*#5107baff;*/
 }
 nav{
-  font-size: 18px;
+  font-size: 22px;
   
+}
+
+.colorLetraNavBar {
+  color: #f29100ff !important; 
+  font-family: 'Rubik', sans-serif;
+}
+
+.boton:hover {
+  color:#5107baff !important;
+}
+
+.borderNav {
+  border-bottom: 0.5px solid #5107baff; 
 }

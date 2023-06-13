@@ -7,25 +7,25 @@ function NavBar() {
 
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
     <img className="imag" src={LOGO}/>
 
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item ">
-        <a className="nav-link" href="#">Mapa</a>
+      <ul className="navbar-nav mr-auto d-flex flex-wrap justify-content-evenl">
+        <li className="nav-item d-flex flex-wrap justify-content-evenly ">
+        <a className="boton nav-link px-5 colorLetraNavBar " href="#">Mapa</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Campañas</a>
+        <li className="nav-item d-flex flex-wrap justify-content-evenly">
+          <a className="boton nav-link px-5 colorLetraNavBar" href="#">Campañas</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Noticias</a>
+        <li className="nav-item d-flex flex-wrap justify-content-evenly">
+          <a className="boton nav-link px-5 colorLetraNavBar" href="#">Noticias</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Mis Donaciones</a>
+        <li className="nav-item d-flex flex-wrap justify-content-evenly">
+          <a className="boton nav-link px-5 colorLetraNavBar" href="#">Mis Donaciones</a>
         </li>
       </ul>
       <span className="navbar-text">
