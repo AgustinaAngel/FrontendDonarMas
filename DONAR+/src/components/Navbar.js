@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import LOGO from '../img/LOGO.png';
+import IniciarSesion from './IniciarSesion';
 /*https://react-icons.github.io/react-icons/icons?name=fa*/
 
 function NavBar() {
-
+  const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(false);
+ 
   return (
     <>
+
     <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
     <img className="imag" src={LOGO}/>
 
@@ -29,10 +32,15 @@ function NavBar() {
         </li>
       </ul>
       <span className="navbar-text">
-      <FaUserCircle className="icon"/>  
+      <a className="icon" href="#" onClick={() => setMostrarIniciarSesion(true)}>
+      <FaUserCircle className="icon" />
+      </a>
       </span>
+
+      
     </div>
   </nav>
+  {mostrarIniciarSesion && <IniciarSesion/>}
   </>
   )
 }
