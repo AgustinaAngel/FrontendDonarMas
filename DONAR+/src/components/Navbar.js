@@ -1,48 +1,89 @@
 import React, { useState } from 'react';
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 import LOGO from '../img/LOGO.png';
 import IniciarSesion from './IniciarSesion';
-/*https://react-icons.github.io/react-icons/icons?name=fa*/
 
 function NavBar() {
-  const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(false);
- 
+  const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(true); // Inicialmente mostrarIniciarSesion se establece en true
+
+  const ocultarIniciarSesion = () => {
+    setMostrarIniciarSesion(false); // Cambia el estado a false para ocultar el componente IniciarSesion
+  };
+
   return (
     <>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
+        <Link className="navbar-brand" to="/">
+          <img className="imag" src={LOGO} alt="Logo" />
+        </Link>
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
-    <img className="imag" src={LOGO}/>
-
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav mr-auto d-flex flex-wrap justify-content-evenl">
-        <li className="nav-item d-flex flex-wrap justify-content-evenly ">
-        <a className="boton nav-link px-5 colorLetraNavBar " href="#">Mapa</a>
-        </li>
-        <li className="nav-item d-flex flex-wrap justify-content-evenly">
-          <a className="boton nav-link px-5 colorLetraNavBar" href="#">Campañas</a>
-        </li>
-        <li className="nav-item d-flex flex-wrap justify-content-evenly">
-          <a className="boton nav-link px-5 colorLetraNavBar" href="#">Noticias</a>
-        </li>
-        <li className="nav-item d-flex flex-wrap justify-content-evenly">
-          <a className="boton nav-link px-5 colorLetraNavBar" href="#">Mis Donaciones</a>
-        </li>
-      </ul>
-      <span className="navbar-text">
-      <a className="icon" href="#" onClick={() => setMostrarIniciarSesion(true)}>
-      <FaUserCircle className="icon" />
-      </a>
-      </span>
-
-      
-    </div>
-  </nav>
-  {mostrarIniciarSesion && <IniciarSesion/>}
-  </>
-  )
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav mr-auto d-flex flex-wrap justify-content-evenl">
+            <li className="nav-item d-flex flex-wrap justify-content-evenly">
+              <NavLink
+                className="nav-link px-5 colorLetraNavBar"
+                activeClassName="active"
+                to="/mapa"
+                onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
+              >
+                Mapa
+              </NavLink>
+            </li>
+            <li className="nav-item d-flex flex-wrap justify-content-evenly">
+              <NavLink
+                className="nav-link px-5 colorLetraNavBar"
+                activeClassName="active"
+                to="/campanas"
+                onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
+              >
+                Campañas
+              </NavLink>
+            </li>
+            <li className="nav-item d-flex flex-wrap justify-content-evenly">
+              <NavLink
+                className="nav-link px-5 colorLetraNavBar"
+                activeClassName="active"
+                to="/noticias"
+                onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
+              >
+                Noticias
+              </NavLink>
+            </li>
+            <li className="nav-item d-flex flex-wrap justify-content-evenly">
+              <NavLink
+                className="nav-link px-5 colorLetraNavBar"
+                activeClassName="active"
+                to="/misdonaciones"
+                onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
+              >
+                Mis Donaciones
+              </NavLink>
+            </li>
+          </ul>
+          <span className="navbar-text">
+            <a className="icon" onClick={() => setMostrarIniciarSesion(true)}>
+              <NavLink className="nav-link px-5 colorLetraNavBar" activeClassName="active" to="/iniciosesion">
+                <FaUserCircle className="icon" />
+              </NavLink>
+            </a>
+          </span>
+        </div>
+      </nav>
+      {mostrarIniciarSesion && <IniciarSesion setMostrarIniciarSesion={setMostrarIniciarSesion} />}
+    </>
+  );
 }
 
 export default NavBar;
