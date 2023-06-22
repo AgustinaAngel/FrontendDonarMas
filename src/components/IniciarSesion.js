@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function IniciarSesion({ setMostrarIniciarSesion }) {
+function IniciarSesion({ setMostrarIniciarSesion,  }) {
+
+//CREO EL OBJETO Y SE LO PASO A NAVBAR
+
+
   return (
     <>
       <div className="pb-5"></div>
@@ -32,5 +36,6 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
     </>
   );
 }
+
 
 export default IniciarSesion;

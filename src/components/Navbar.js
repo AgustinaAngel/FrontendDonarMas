@@ -11,6 +11,12 @@ function Navbar() {
     setMostrarIniciarSesion(false); // Cambia el estado a false para ocultar el componente IniciarSesion
   };
 
+
+  /*const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(true); // Inicialmente mostrarIniciarSesion se establece en true
+
+  const ocultarIniciarSesion = () => {
+    setMostrarIniciarSesion(false); // Cambia el estado a false para ocultar el componente IniciarSesion
+  };//FUNCION QUE RECIBE LOS VALORES DEL COMPONENETE DEL LOGIN PARA PASARSELO A LA LLAMDA DE LA API EN UNA CARPETA FUNCIONES . */
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
