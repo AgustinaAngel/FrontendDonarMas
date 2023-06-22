@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import LOGO from '../img/LOGO.png';
 import IniciarSesion from './IniciarSesion';
 
-function NavBar() {
+function Navbar() {
   const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(true); // Inicialmente mostrarIniciarSesion se establece en true
 
   const ocultarIniciarSesion = () => {
@@ -86,4 +86,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
