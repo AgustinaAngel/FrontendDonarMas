@@ -38,7 +38,7 @@ function NavBar() {
                 to="/mapa"
                 onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
-                Mapa
+                Mapaa
               </NavLink>
             </li>
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
