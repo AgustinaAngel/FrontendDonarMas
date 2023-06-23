@@ -12,11 +12,7 @@ function Navbar() {
   };
 
 
-  /*const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(true); // Inicialmente mostrarIniciarSesion se establece en true
-
-  const ocultarIniciarSesion = () => {
-    setMostrarIniciarSesion(false); // Cambia el estado a false para ocultar el componente IniciarSesion
-  };//FUNCION QUE RECIBE LOS VALORES DEL COMPONENETE DEL LOGIN PARA PASARSELO A LA LLAMDA DE LA API EN UNA CARPETA FUNCIONES . */
+ 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
@@ -40,7 +36,7 @@ function Navbar() {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeClassName="active"
+                activeclassname="active"
                 to="/mapa"
                 onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
@@ -50,7 +46,7 @@ function Navbar() {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeClassName="active"
+                activeclassname="active"
                 to="/campanas"
                 onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
@@ -60,7 +56,7 @@ function Navbar() {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeClassName="active"
+                activeclassname="active"
                 to="/noticias"
                 onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
@@ -70,7 +66,7 @@ function Navbar() {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeClassName="active"
+                activeclassname="active"
                 to="/misdonaciones"
                 onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
@@ -80,14 +76,15 @@ function Navbar() {
           </ul>
           <span className="navbar-text">
             <a className="icon" onClick={() => setMostrarIniciarSesion(true)}>
-              <NavLink className="nav-link px-5 colorLetraNavBar" activeClassName="active" to="/iniciosesion">
+              <NavLink className="nav-link px-5 colorLetraNavBar" activeclassname="active" to="/iniciosesion">
                 <FaUserCircle className="icon" />
               </NavLink>
             </a>
           </span>
         </div>
       </nav>
-      {mostrarIniciarSesion && <IniciarSesion setMostrarIniciarSesion={setMostrarIniciarSesion} />}
+      {mostrarIniciarSesion && <IniciarSesion setMostrarIniciarSesion={setMostrarIniciarSesion}/>}
+  
     </>
   );
 }
