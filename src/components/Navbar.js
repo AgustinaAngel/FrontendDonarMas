@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import LOGO from '../img/LOGO.png';
 import IniciarSesion from './IniciarSesion';
+import user from '../context/user.js';
+import navBarLink from '../context/navBarLink.js';
+import CrearCampañas from './CrearCampañas';
 
 function Navbar() {
   const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(true); // Inicialmente mostrarIniciarSesion se establece en true
@@ -11,8 +14,19 @@ function Navbar() {
     setMostrarIniciarSesion(false); // Cambia el estado a false para ocultar el componente IniciarSesion
   };
 
+  const myContextavBarLink = useContext(navBarLink);
+  const myContextUser = useContext(user);
 
- 
+  const CambiarLinkCmpaña=() => {
+  
+    ocultarIniciarSesion();
+    if (myContextUser.tipo === "ONG") {
+      myContextavBarLink.setCampañas(<CrearCampañas/>);
+    }
+   
+
+  }
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
@@ -40,7 +54,7 @@ function Navbar() {
                 to="/mapa"
                 onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
-                Mapaa
+                Mapa
               </NavLink>
             </li>
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
@@ -48,7 +62,7 @@ function Navbar() {
                 className="nav-link px-5 colorLetraNavBar"
                 activeclassname="active"
                 to="/campanas"
-                onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
+                onClick={CambiarLinkCmpaña()} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
                 Campañas
               </NavLink>
@@ -58,7 +72,7 @@ function Navbar() {
                 className="nav-link px-5 colorLetraNavBar"
                 activeclassname="active"
                 to="/noticias"
-                onClick={ocultarIniciarSesion} // Oculta el componente IniciarSesion al hacer clic en el enlace
+                onClick={CambiarLinkCmpaña} // Oculta el componente IniciarSesion al hacer clic en el enlace
               >
                 Noticias
               </NavLink>
@@ -83,8 +97,8 @@ function Navbar() {
           </span>
         </div>
       </nav>
-      {mostrarIniciarSesion && <IniciarSesion setMostrarIniciarSesion={setMostrarIniciarSesion}/>}
-  
+      {mostrarIniciarSesion && <IniciarSesion setMostrarIniciarSesion={setMostrarIniciarSesion} />}
+
     </>
   );
 }
