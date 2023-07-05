@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useContext } from 'react';
 import user from '../context/user.js';
 import navBarLink from '../context/navBarLink.js';
-import CrearCampañas from './CrearCampañas';
+//import CrearCampañas from './CrearCampañas';
 
 
 function IniciarSesion({ setMostrarIniciarSesion }) {
@@ -13,7 +13,7 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
 
 
   const myContextUser = useContext(user);
-  const myContextavBarLink = useContext(navBarLink);
+  //const myContextavBarLink = useContext(navBarLink);
 
   //const usuarioC = useContext(donarContext);
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -22,12 +22,12 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
   const onSubmit = async (data) => {
     console.log(data);
 
-    if (data.mailBuscar == '' || data.contraseñaBuscar == '') {
+    if (data.mailBuscar === '' || data.contraseñaBuscar === '') {
       console.log("debo mostar error");
 
     }
     else {
-      try {
+      /*try {
         const response = await axios.post(process.env.REACT_APP_BASE_URL_DONAR + "/auth/login", data);
 
         if (response.status === 200) {
@@ -46,15 +46,16 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
           //console.log(usuarioC);
 
           //aca guardo con el context el objeto. No tengo que escribir los atributos sino guardarlo de forma global
-         /* if (myContextUser.tipo == "donante") {
-          myContextavBarLink.setCampañas(<CrearCampañas/>);
+          if (myContextUser.tipo === "Donante") {
+          //myContextavBarLink.setCampañas(<CrearCampañas/>);
+          console.log("HOLA DONANTE");
 
           }
-          if (myContextUser.tipo == "ONG") {
-            myContextavBarLink.setCampañas();
-           
-          }*/
-
+          if (myContextUser.tipo === "ONG") {
+            //myContextavBarLink.setCampañas();
+            console.log("HOLA ONG");
+            myContextavBarLink.setCampañas(<CrearCampañas />);
+          }
 
 
         } else {
@@ -62,7 +63,7 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
         }
       } catch (error) {
         console.log(error);
-      }
+      }*/
 
       /*Por ahora guardo el token y el usuario harcodeado
       const token = "abc123";
@@ -71,6 +72,14 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
         apellido: "Pepe",
         tipo: "ONG",
         direccion: "Yatay 240",*/
+
+        myContextUser.setToken("estetoken");
+        myContextUser.setUsuario({"nombre": "STANCA"});
+        myContextUser.setTipo("ONG");
+        console.log(myContextUser.token);
+          console.log(myContextUser.usuario);
+          console.log(myContextUser.tipo);
+
 
     }
 

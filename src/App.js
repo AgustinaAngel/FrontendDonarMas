@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import IniciarSesion from './components/IniciarSesion';
+import CrearCampañas from './components/CrearCampañas';
 import './App.css';
 import user from './context/user.js';
 import navBarLinks from './context/navBarLink.js';
@@ -44,7 +45,7 @@ function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/inciosesion" element={<IniciarSesion />} />
+            <Route path="/inciosesion" element={<IniciarSesion />} path2="/campaña" element2={<CrearCampañas />} />
           </Routes>
 
 
