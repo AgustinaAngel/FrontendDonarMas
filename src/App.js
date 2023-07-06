@@ -44,11 +44,12 @@ function App() {
       <navBarLinks.Provider value={navBarLinksSettings}>{
         <Router>
           <NavBar />
+        <div className= "marginCostados">
           <Routes>
             <Route path="/inciosesion" element={<IniciarSesion />} path2="/campaña" element2={<CrearCampañas />} />
           </Routes>
 
-
+          </div>
         </Router>}
       </navBarLinks.Provider>}
     </user.Provider>

@@ -22,7 +22,7 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
   const onSubmit = async (data) => {
     console.log(data);
 
-    if (data.mailBuscar === '' || data.contraseñaBuscar === '') {
+    if (data.mail === '' || data.password === '') {
       console.log("debo mostar error");
 
     }
