@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { useContext } from 'react';
 import user from '../context/user.js';
-import navBarLink from '../context/navBarLink.js';
+
 //import CrearCampañas from './CrearCampañas';
 
 
@@ -43,28 +43,13 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
           console.log(myContextUser.usuario);
           console.log(myContextUser.tipo);
 
-          //console.log(usuarioC);
-
-          //aca guardo con el context el objeto. No tengo que escribir los atributos sino guardarlo de forma global
-          if (myContextUser.tipo === "Donante") {
-          //myContextavBarLink.setCampañas(<CrearCampañas/>);
-          console.log("HOLA DONANTE");
-
-          }
-          if (myContextUser.tipo === "ONG") {
-            //myContextavBarLink.setCampañas();
-            console.log("HOLA ONG");
-            myContextavBarLink.setCampañas(<CrearCampañas />);
-          }
-
-
         } else {
           throw new Error("Logueo incorrecto");
         }
       } catch (error) {
         console.log(error);
-      }*/
-
+      }
+*/
       /*Por ahora guardo el token y el usuario harcodeado
       const token = "abc123";
       const user = {

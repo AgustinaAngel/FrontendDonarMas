@@ -6,19 +6,19 @@
 }
 
 .marginCostados{
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 30% auto;
+  margin-right: 40% auto;
   margin-top: 0px;
 }
 
 
 .cardCrear{
-  margin-left: 400px;
-  margin-right: 100px;
+  margin-left: 50% auto!important;
+  margin-right: 10% auto!important;
   margin-top: 0px;
 }
 .inputCrear{
-  margin-left: 240px;
+  margin-left: 190px;
   margin-right: 250px;
   margin-top: 0px;
   color:  #5107baff; 
@@ -93,8 +93,8 @@ nav{
 
 
 .cardCrearCampaña{
-  width:900px;
-  height:600px;
+  width:60%;
+  height:45%;
   border-radius:15px !important;
   background-color:  #f29100ff !important;
  
@@ -103,6 +103,13 @@ nav{
 .medidainput{
   width:400px;
   height:50px !important;
+  border-radius:7px !important;
+}
+
+.medidainput2
+{
+  width:400px;
+  height:35px !important;
   border-radius:7px !important;
 }
 

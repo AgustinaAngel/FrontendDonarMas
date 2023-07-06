@@ -5,7 +5,6 @@ import IniciarSesion from './components/IniciarSesion';
 import CrearCampañas from './components/CrearCampañas';
 import './App.css';
 import user from './context/user.js';
-import navBarLinks from './context/navBarLink.js';
 
 function App() {
   const [token, setToken] = useState('');
@@ -22,26 +21,9 @@ function App() {
   };
 
 
-  const [mapa, setMapa] = useState('');
-  const [campañas, setCampañas] = useState('');
-  const [noticias, setNotocias] = useState('');
-  const [misDonaciones, setMisDonaciones] = useState('');
-
-  const navBarLinksSettings = {
-    mapa,
-    campañas,
-    noticias,
-    misDonaciones,
-    setMapa,
-    setCampañas,
-    setNotocias,
-    setMisDonaciones,
-  };
-
-
   return (
     <user.Provider value={userSettings}>{
-      <navBarLinks.Provider value={navBarLinksSettings}>{
+    
         <Router>
           <NavBar />
         <div className= "marginCostados">
@@ -51,7 +33,7 @@ function App() {
 
           </div>
         </Router>}
-      </navBarLinks.Provider>}
+
     </user.Provider>
   );
 }
