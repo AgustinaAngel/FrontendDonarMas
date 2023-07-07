@@ -38,6 +38,13 @@ h1,h2,h3,h4,h5,p{
 .slogan{
   color: #f29100ff; 
   font-size: 30px;
+  font-weight: 900;
+}
+.quieroAyudar
+{
+  color: #5107baff; 
+  font-size: 20px;
+  font-weight: 500;
 }
 
 

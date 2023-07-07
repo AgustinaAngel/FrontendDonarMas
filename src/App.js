@@ -7,11 +7,13 @@ import './App.css';
 import user from './context/user.js';
 import Home from './components/Home';
 
+
 function App() {
   const [token, setToken] = useState('');
   const [usuario, setUsuario] = useState({});
   const [tipo, setTipo] = useState('');
   const [mostrarHome, setMostrarHome] = useState(true); // Variable de estado para controlar la visibilidad de Home
+
 
   const userSettings = {
     token,
@@ -22,16 +24,18 @@ function App() {
     setTipo,
   };
 
+
   const ocultarHome = () => {
     setMostrarHome(false);
   };
 
+
   return (
     <user.Provider value={userSettings}>
       <Router>
-        <NavBar ocultarHome={ocultarHome} /> {/* Pasar la función ocultarHome como prop a NavBar */}
+        <NavBar ocultarHome={ocultarHome} />
         <div className="marginCostados">
-          {mostrarHome && <Home />} {/* Mostrar Home solo si mostrarHome es true */}
+          {mostrarHome && <Home />}
           <Routes>
             <Route path="/inciosesion" element={<IniciarSesion />} path2="/campaña" element2={<CrearCampañas />} />
           </Routes>
@@ -40,5 +44,6 @@ function App() {
     </user.Provider>
   );
 }
+
 
 export default App;
