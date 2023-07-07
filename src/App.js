@@ -26,22 +26,27 @@ function App() {
     setMostrarHome(false);
   };
 
+  const ocultarComponentes = () => {
+    setMostrarHome(true);
+  };
+
+
   return (
     <user.Provider value={userSettings}>
       <Router>
-  <NavBar ocultarHome={ocultarHome} />
+      <NavBar ocultarHome={ocultarHome} ocultarComponentes={ocultarComponentes} />
   <div className="marginCostados">
-    {mostrarHome && <Home />}
-    <Routes>
-    <Route path="/" element={<Home />} />
-      <Route path="/inciosesion" element={<IniciarSesion />} />
-      <Route path="/campaña" element={<CrearCampañas />} />
-    </Routes>
-  </div>
+  {mostrarHome && <Home />}
+  <Routes>
+    <Route path="/inciosesion" element={<IniciarSesion />} />
+    <Route path="/campaña" element={<CrearCampañas />} />
+  </Routes>
+</div>
 </Router>
     </user.Provider>
   );
 }
+
 
 export default App;
 

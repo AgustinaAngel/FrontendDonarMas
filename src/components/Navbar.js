@@ -9,15 +9,18 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function Navbar({ ocultarHome }) {
+function Navbar({ ocultarHome, ocultarComponentes }) {
   const navigate = useNavigate(); 
   const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(false);
   const [mostrarCrearCampñas, setMostrarCrearCampñas] = useState(false);
 
 
   const handleLogoClick = () => {
-    navigate('/'); // Reemplaza history.push('/') por navigate('/')
+    setMostrarIniciarSesion(false);
+    setMostrarCrearCampñas(false);
+    ocultarComponentes();
   };
+  
   const myContextUser = useContext(user);
 
   const ocultarIniciarSesion = () => {
