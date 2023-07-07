@@ -1,16 +1,23 @@
-
-import IniciarSesion from './IniciarSesion';
 import React, { useState, useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
 import LOGO from '../img/LOGO.png';
 import user from '../context/user.js';
 import CrearCampañas from './CrearCampañas';
+import IniciarSesion from './IniciarSesion.js';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 
 function Navbar({ ocultarHome }) {
+  const navigate = useNavigate(); 
   const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(false);
   const [mostrarCrearCampñas, setMostrarCrearCampñas] = useState(false);
-  
+
+
+  const handleLogoClick = () => {
+    navigate('/'); // Reemplaza history.push('/') por navigate('/')
+  };
   const myContextUser = useContext(user);
 
   const ocultarIniciarSesion = () => {
@@ -25,21 +32,23 @@ function Navbar({ ocultarHome }) {
   };
 
   const CambiarLinkCampaña = () => {
-    if (myContextUser.tipo === "ONG") {
+    if (myContextUser.tipo === 'ONG') {
       MostrarloONGCrearCampaña();
     }
-    if (myContextUser.tipo === "Donante") {
-      console.log("sos un donante");
+    if (myContextUser.tipo === 'Donante') {
+      console.log('sos un donante');
     }
-  }
+  };
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
-        <Link className="navbar-brand" to="/">
-          <img className="imag" src={LOGO} alt="Logo" />
-        </Link>
+      <div onClick={handleLogoClick}>
+      <Link to="/" className="navbar-brand" onClick={ocultarHome}>
+  <img className="imag" src={LOGO} alt="Logo" />
+</Link>
 
+      </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -56,7 +65,7 @@ function Navbar({ ocultarHome }) {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeclassname="active"
+                activeClassName="active"
                 to="/mapa"
                 onClick={ocultarIniciarSesion}
               >
@@ -66,7 +75,7 @@ function Navbar({ ocultarHome }) {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeclassname="active"
+                activeClassName="active"
                 to="/campanas"
                 onClick={CambiarLinkCampaña}
               >
@@ -76,7 +85,7 @@ function Navbar({ ocultarHome }) {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeclassname="active"
+                activeClassName="active"
                 to="/noticias"
                 onClick={ocultarIniciarSesion}
               >
@@ -86,7 +95,7 @@ function Navbar({ ocultarHome }) {
             <li className="nav-item d-flex flex-wrap justify-content-evenly">
               <NavLink
                 className="nav-link px-5 colorLetraNavBar"
-                activeclassname="active"
+                activeClassName="active"
                 to="/misdonaciones"
                 onClick={ocultarIniciarSesion}
               >
@@ -103,7 +112,7 @@ function Navbar({ ocultarHome }) {
                 ocultarHome(); // Llamar a la función ocultarHome cuando se muestre IniciarSesion
               }}
             >
-              <NavLink className="nav-link px-5 colorLetraNavBar" activeclassname="active" to="/iniciosesion">
+              <NavLink className="nav-link px-5 colorLetraNavBar" activeClassName="active" to="/iniciosesion">
                 <FaUserCircle className="icon" />
               </NavLink>
             </a>
@@ -117,4 +126,3 @@ function Navbar({ ocultarHome }) {
 }
 
 export default Navbar;
-
