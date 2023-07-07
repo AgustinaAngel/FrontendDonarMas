@@ -1,14 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
 import user from '../context/user.js';
 import Carousel from './Carousel';
-import QuieroAyudar from './QuieroAyudar';
+import QuieroAyudar from './QuieroAyudar.js';
 
 const Home = () => {
     const myContextUser = useContext(user);
-    const [mostrarQuieroAyudar, setMostrarQuieroAyudar] = useState(false);
+    const [mostrarQuieroAyudar, setMostrarQuieroAyudar] = useState(true);
 
     useEffect(() => {
-        if (myContextUser.tipo !== "ONG" && myContextUser.tipo !== "Donante") {
+        if ((myContextUser.tipo === "Donante") || (myContextUser.tipo === "ONG")) {
+            setMostrarQuieroAyudar(false);
+        } else {
             setMostrarQuieroAyudar(true);
         }
     }, [myContextUser.tipo]);
@@ -19,10 +21,8 @@ const Home = () => {
             <br />
             <center>
                 <h1 className="slogan">“Más solidaridad, más impacto: Donar+ liderando el cambio"</h1>
-                {mostrarQuieroAyudar && <QuieroAyudar />}
-                <button className=" botonVioleta" type="submit">
-                    Registrate
-                  </button>
+                {mostrarQuieroAyudar && <QuieroAyudar/>}
+               
             </center>
         </>
     );

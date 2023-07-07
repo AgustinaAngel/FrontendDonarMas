@@ -57,15 +57,18 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
         apellido: "Pepe",
         tipo: "ONG",
         direccion: "Yatay 240",*/
+        const token = 'estetoken';
+        const usuario = { nombre: 'STANCA' };
+        const tipo = 'ONG';
+  
+        // Actualiza los valores del contexto
+        myContextUser.setToken(token);
+        myContextUser.setUsuario(usuario);
+        myContextUser.setTipo(tipo);
 
-        myContextUser.setToken("estetoken");
-        myContextUser.setUsuario({"nombre": "STANCA"});
-        myContextUser.setTipo("ONG");
         console.log(myContextUser.token);
-          console.log(myContextUser.usuario);
-          console.log(myContextUser.tipo);
-
-
+        console.log(myContextUser.usuario);
+        console.log(myContextUser.tipo);
     }
 
   }
