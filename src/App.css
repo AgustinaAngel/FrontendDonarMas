@@ -18,8 +18,8 @@
   margin-top: 0px;
 }
 .inputCrear{
-  margin-left: 190px;
-  margin-right: 250px;
+  margin-left: 24%;
+  /*margin-right: 80%;*/
   margin-top: 0px;
   color:  #5107baff; 
   font-family: 'Rubik', sans-serif;
@@ -162,6 +162,9 @@ nav{
   font-size: 35px;
 }
 .tamañoCarousel{
-  width:100% !important;
+  width: 100%  !important;
   height: auto!important;
+}
+.colorVioleta{
+  color: #5107baff !important;
 }

@@ -26,8 +26,8 @@ const CrearCampañas = () => {
         }
       } catch (error) {
         console.log(error);
-      }*/
-
+      }
+*/
       
     }
   };
@@ -85,14 +85,14 @@ const CrearCampañas = () => {
                   <div className="inputCrear">
                     <label align="left">Fecha inicio:</label>
                   </div>
-                  <input type="date" name="fechaInicio" className="medidainput2" autoComplete="off" />
+                  <input type="date" {...register('fechaInicio')} name="fechaInicio" className="medidainput2" autoComplete="off" />
 
                   <br />
 
                   <div className="inputCrear">
                     <label align="left">Fecha fin:</label>
                   </div>
-                  <input type="date" name="fechaFin" className="medidainput2" autoComplete="off" />
+                  <input type="date"  {...register('fechaFin')} name="fechaFin" className="medidainput2" autoComplete="off" />
                   <br />
                   <button className=" botonVioleta" type="submit">
                     Enviar

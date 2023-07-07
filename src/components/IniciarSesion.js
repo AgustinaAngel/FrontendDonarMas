@@ -28,7 +28,7 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
     }
     else {
       /*try {
-        const response = await axios.post(process.env.REACT_APP_BASE_URL_DONAR + "/auth/login", data);
+        const response = await axios.post('http://localhost:3001/auth/login', data);
 
         if (response.status === 200) {
           const data = await response.data;
@@ -49,7 +49,7 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
       } catch (error) {
         console.log(error);
       }
-*/
+
       /*Por ahora guardo el token y el usuario harcodeado
       const token = "abc123";
       const user = {
@@ -57,7 +57,7 @@ function IniciarSesion({ setMostrarIniciarSesion }) {
         apellido: "Pepe",
         tipo: "ONG",
         direccion: "Yatay 240",*/
-        const token = 'estetoken';
+      const token = 'estetoken';
         const usuario = { nombre: 'STANCA' };
         const tipo = 'ONG';
   
