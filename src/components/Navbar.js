@@ -1,24 +1,27 @@
+
+import IniciarSesion from './IniciarSesion';
 import React, { useState, useContext } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import LOGO from '../img/LOGO.png';
-import IniciarSesion from './IniciarSesion';
 import user from '../context/user.js';
 import CrearCampañas from './CrearCampañas';
 
-function Navbar() {
-  const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(true);
+function Navbar({ ocultarHome }) {
+  const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(false);
   const [mostrarCrearCampñas, setMostrarCrearCampñas] = useState(false);
   
   const myContextUser = useContext(user);
 
   const ocultarIniciarSesion = () => {
     setMostrarIniciarSesion(false);
+    ocultarHome(); // Llamar a la función ocultarHome cuando se oculte IniciarSesion
   };
 
   const MostrarloONGCrearCampaña = () => {
     setMostrarCrearCampñas(true);
     setMostrarIniciarSesion(false);
+    ocultarHome(); // Llamar a la función ocultarHome cuando se muestre CrearCampañas
   };
 
   const CambiarLinkCampaña = () => {
@@ -92,8 +95,14 @@ function Navbar() {
             </li>
           </ul>
           <span className="navbar-text">
-          <a className="icon" onClick={() => { setMostrarIniciarSesion(true); setMostrarCrearCampñas(false); }}>
-
+            <a
+              className="icon"
+              onClick={() => {
+                setMostrarIniciarSesion(true);
+                setMostrarCrearCampñas(false);
+                ocultarHome(); // Llamar a la función ocultarHome cuando se muestre IniciarSesion
+              }}
+            >
               <NavLink className="nav-link px-5 colorLetraNavBar" activeclassname="active" to="/iniciosesion">
                 <FaUserCircle className="icon" />
               </NavLink>

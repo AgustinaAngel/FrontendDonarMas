@@ -16,7 +16,7 @@ const CrearCampañas = () => {
     if (data.nombre === '' || data.descripcion === '') {
       console.log('Debo mostrar error');
     } else {
-      try {
+      /*try {
         const response = await axios.post(process.env.REACT_APP_BASE_URL_DONAR + '/campanias', data);
         if (response.status === 200) {
           //const data = await response.data;
@@ -26,7 +26,9 @@ const CrearCampañas = () => {
         }
       } catch (error) {
         console.log(error);
-      }
+      }*/
+
+      
     }
   };
 

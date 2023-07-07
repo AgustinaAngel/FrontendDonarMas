@@ -35,6 +35,11 @@ h1,h2,h3,h4,h5,p{
   /*#5107baff;*/
 }
 
+.slogan{
+  color: #f29100ff; 
+  font-size: 30px;
+}
+
 
 .botonCrearCampaña{
   width:250px;
@@ -148,4 +153,8 @@ nav{
   color:#ffff;
   font-weight:600;
   font-size: 35px;
+}
+.tamañoCarousel{
+  width:100% !important;
+  height: auto!important;
 }
