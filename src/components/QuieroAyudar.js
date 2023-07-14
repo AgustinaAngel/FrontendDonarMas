@@ -1,14 +1,17 @@
 import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 
-const QuieroAyudar = () => {
+
+function QuieroAyudar() {
 
 
     return (
         <>
-        <h2 className="quieroAyudar">¿Querés empezar a ayudar?</h2>
-        <button className=" botonVioleta" type="submit">
-                    Registrate
-                </button>
+            <h2 className="quieroAyudar">¿Querés empezar a ayudar?</h2>
+            <button className=" botonVioleta" type="submit">
+                Registrate
+            </button>
+
         </>
     );
 };

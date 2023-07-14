@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const CrearCampañas = () => {
+function CrearCampañas() {
   const [showForm, setShowForm] = useState(false);
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 

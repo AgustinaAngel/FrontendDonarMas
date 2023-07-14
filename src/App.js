@@ -6,6 +6,8 @@ import CrearCampañas from './components/CrearCampañas';
 import './App.css';
 import user from './context/user.js';
 import Home from './components/Home';
+import QuieroAyudar from './components/QuieroAyudar';
+import Registro from './components/Registro';
 
 function App() {
   const [token, setToken] = useState('');
@@ -34,16 +36,18 @@ function App() {
   return (
     <user.Provider value={userSettings}>
       <Router>
-      <NavBar ocultarHome={ocultarHome} ocultarComponentes={ocultarComponentes} />
-  <div className="marginCostados">
-  {mostrarHome && <Home />}
-  <Routes>
-    <Route path="/inciosesion" element={<IniciarSesion />} />
-    <Route path="/campaña" element={<CrearCampañas />} />
-  </Routes>
-</div>
-</Router>
-    </user.Provider>
+        <NavBar ocultarHome={ocultarHome} ocultarComponentes={ocultarComponentes} />
+        <div className="marginCostados">
+          {mostrarHome && <Home />}
+          <Routes>
+            <Route path="/inciosesion" element={<IniciarSesion />} />
+            <Route path="/campaña" element={<CrearCampañas />} />
+           
+
+          </Routes>
+        </div>
+      </Router>
+    </user.Provider >
   );
 }
 
