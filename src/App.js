@@ -42,7 +42,8 @@ function App() {
           <Routes>
             <Route path="/inciosesion" element={<IniciarSesion />} />
             <Route path="/campaña" element={<CrearCampañas />} />
-           
+            <Route exact path="/" component={QuieroAyudar} />
+            <Route path="/Registro" component={Registro} />
 
           </Routes>
         </div>

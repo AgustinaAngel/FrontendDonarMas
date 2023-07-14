@@ -10,7 +10,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 function Navbar({ ocultarHome, ocultarComponentes }) {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [mostrarIniciarSesion, setMostrarIniciarSesion] = useState(false);
   const [mostrarCrearCampñas, setMostrarCrearCampñas] = useState(false);
 
@@ -20,7 +20,7 @@ function Navbar({ ocultarHome, ocultarComponentes }) {
     setMostrarCrearCampñas(false);
     ocultarComponentes();
   };
-  
+
   const myContextUser = useContext(user);
 
   const ocultarIniciarSesion = () => {
@@ -46,12 +46,12 @@ function Navbar({ ocultarHome, ocultarComponentes }) {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light borderNav">
-      <div onClick={handleLogoClick}>
-      <Link to="/" className="navbar-brand" onClick={ocultarHome}>
-  <img className="imag" src={LOGO} alt="Logo" />
-</Link>
+        <div onClick={handleLogoClick}>
+          <Link to="/" className="navbar-brand" onClick={ocultarHome}>
+            <img className="imag" src={LOGO} alt="Logo" />
+          </Link>
 
-      </div>
+        </div>
         <button
           className="navbar-toggler"
           type="button"
